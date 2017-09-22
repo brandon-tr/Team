@@ -1,0 +1,7 @@
+<h4><a href="#">List Players</a> | <a href="#">Add Player</a></h4>
+
+<div *ngFor="let lists of list, let i = index">
+    {{lists.name}} ---- {{lists.position}} <button (click)="DeletePrompt(lists._id)">Delete</button>
+    <br>
+    -------------------------------------------
+</div>

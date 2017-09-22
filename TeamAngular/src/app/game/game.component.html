@@ -1,0 +1,6 @@
+<div *ngFor="let lists of list, let i = index">
+    {{lists.name}} 
+    <button [ngClass]="{green:lists.Game1 === 2}" (click)="Play(i)">Playing</button> 
+    <button [ngClass]="{red:lists.Game1 === 1}" (click)="NotPlay(i)">Not Playing</button> 
+    <button [ngClass]="{yellow:lists.Game1 === 0}" (click)="Undecided(i)">Undecided</button>
+</div>

@@ -1,0 +1,13 @@
+<form (submit)="addPlayer()" #formData="ngForm">
+  Name<input type="text" name="player_name" required minlength="3" [(ngModel)]="player.name" #player_name="ngModel">
+  Position<input type="text" name="player_position" minlength="3" [(ngModel)]="player.position" #player_position="ngModel">
+  <input type="submit" value="Submit" [disabled]="formData.invalid">
+  <div *ngIf="player_name.invalid && (player_name.touched || player_name.dirty)">
+    <p *ngIf="player_name.errors.required">Name is required</p>
+    <p *ngIf="player_name.errors.minlength"> Minimum length of name is 3</p>
+  </div>
+  <div *ngIf="player_position.invalid && (player_position.touched || player_position.dirty)">
+    <p *ngIf="player_position.errors.required">Position is required</p>
+    <p *ngIf="player_position.errors.minlength"> Minimum length of position is 3</p>
+  </div>
+</form>
